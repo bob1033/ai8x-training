@@ -1,0 +1,2 @@
+from .datasets import VisualWakeWordsClassification
+from .datasets import VisualWakeWordsClassificationFolding
