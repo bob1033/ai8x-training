@@ -1,0 +1,11 @@
+#start_epoch: 10
+#weight_bits: 4
+#overrides:
+#    conv1_1:
+#        weight_bits: 8
+#    conv2_7:
+#        weight_bits: 8
+#    fc_1:
+#        weight_bits: 8
+start_epoch: 25
+weight_bits: 8

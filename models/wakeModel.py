@@ -61,3 +61,11 @@ class wakeModel_deep(nn.Module):
 def wakemodel_deep(pretrained=False, **kwargs):
     assert not pretrained
     return wakeModel_deep(**kwargs)
+    
+models = [
+    {
+        'name': 'wakemodel_deep',
+        'min_input': 1,
+        'dim': 2,
+    },
+]

@@ -1,6 +1,10 @@
 import pyvww
 from torchvision import transforms
 
+#folder paths to images and annotations
+image_path = "/home/bobbycounts/visualWakeNew/ai8x-training/datasets/vww/all/"
+ann_path = "/home/bobbycounts/visualWakeNew/ai8x-training/datasets/vww/annotations_vww/"
+
 
 def vww_get_datasets(data, load_train=True, load_test=True):
     resolution = (256,256)
@@ -21,7 +25,7 @@ def vww_get_datasets(data, load_train=True, load_test=True):
             #transforms.Normalize()
         ])
         
-        train_dataset = dataset(root="./datasets/vww/all", annFile="./datasets/vww/annotations_vww/instances_train.json", transform= train_transform)
+        train_dataset = dataset(root=image_path, annFile=ann_path + "instances_train.json", transform=train_transform)
         
     else:
         train_transform = None
@@ -34,7 +38,7 @@ def vww_get_datasets(data, load_train=True, load_test=True):
             #transforms.Normalize()
         ])
 
-        test_dataset = dataset(root="./datasets/vww/all", annFile="./datasets/vww/annotations_vww/instances_val.json", transform=test_transform)
+        test_dataset = dataset(root=image_path, annFile=ann_path + "instances_val.json", transform=test_transform)
         
     else:
         test_dataset = None
